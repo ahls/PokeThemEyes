@@ -46,7 +46,8 @@ def homepage():
             pkTypes = [x.pokemon_type for x in PokemonTypes.query.filter(PokemonTypes.pokemon_id==pokemon.id).all()]
             a,b = TypeToTypeRelation.CalculateRelation(pkTypes)
             relAtk,relDef,atkMult, defMult = FindBestTypes(a,b)
-        return render_template('main.html',pokemon = pokemon, relAtk = relAtk, relDef=relDef, atkMult= atkMult,defMult=defMult)
+            return render_template('main.html',pokemon = pokemon, relAtk = relAtk, relDef=relDef, atkMult= atkMult,defMult=defMult)
+            
     return render_template('main.html', pokemon= None)
 def FindBestTypes(relAtk,relDef):
     #iterate over all relation attack to find set of highest values

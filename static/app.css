@@ -7,6 +7,13 @@
     border-width: 2px;
     border-style: solid;
 }
+.message
+{
+    font-size: 10px !important;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
 img{
     display: block;
     margin: 0 auto;
