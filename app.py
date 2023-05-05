@@ -23,6 +23,7 @@ def homepage():
     pokemon = None
     if name != None:
         #search if the pokemon is in the database
+        name = name.lower()
         pokemon = Pokemon.query.filter(Pokemon.name == name).first()
         if pokemon == None:
             # if pokemon does not exist, try to fetch from the server.
@@ -47,7 +48,7 @@ def homepage():
             a,b = TypeToTypeRelation.CalculateRelation(pkTypes)
             relAtk,relDef,atkMult, defMult = FindBestTypes(a,b)
             return render_template('main.html',pokemon = pokemon, relAtk = relAtk, relDef=relDef, atkMult= atkMult,defMult=defMult)
-            
+
     return render_template('main.html', pokemon= None)
 def FindBestTypes(relAtk,relDef):
     #iterate over all relation attack to find set of highest values
