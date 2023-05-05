@@ -3,12 +3,13 @@ from flask import Flask, request, render_template,redirect, flash, session, json
 import requests
 #from flask_debugtoolbar import DebugToolBarExtension
 from models import db, connect_db, Pokemon, Type, TypeToTypeRelation,PokemonTypes
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///poketheeyes'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgresql:///poketheeyes')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
-app.config['SECRET_KEY'] = 'hehe123'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY','mul ggoraba')
 
 #debug= DebugToolBarExtension(app)
 connect_db(app)
