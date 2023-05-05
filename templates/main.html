@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block bodyBlock %}
+<form action="/" method="post" class="form-inline">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-9">
+          <input class="form-control textInput" type="text" name="name">
+        </div>
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-primary btn-block">Go!</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+
+    {% if pokemon != None %}
+    <div>
+        <img src="{{pokemon.imagePath}}" alt="image of {{pokemon.name}}">
+    </div>
+    {{pokemon.name}}
+    <div class="outline">
+        <div class="box-label outline">
+            weakness
+        </div>
+        <div>
+            Takes the most damage(x{{defMult}}) from:
+            <ul>
+                {% for tp in relDef%}
+                    <li>
+                        <div class="{{tp}} typeDisplay">
+                            {{tp}}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            Does the least damage(x{{atkMult}}) to:
+            <ul>
+            {% for tp in relAtk%}
+                <li>
+                    <div class="{{tp}} typeDisplay">
+                        {{tp}}
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

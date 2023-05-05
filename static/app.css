@@ -1,0 +1,145 @@
+.outline
+{
+    position:relative;
+    margin: 10px;
+    padding:5px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+}
+img{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    border-bottom: -50px;
+    justify-content: center; /* Center the image horizontally */    
+    border-radius: 5px;
+    border-width:3px;
+    border-style: solid;
+    background-color: grey;
+}
+.box-label
+{
+    width:fit-content;
+    padding:5px;
+    position: relative;
+    top: -25px;
+    background-color: lightgray;
+}
+.typeDisplay
+{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 5px;
+    border-width:2px;
+    border-style: solid;
+    width:fit-content;
+    padding: 1px 10px;
+}
+.normal {
+    background-color: #a8a77a;
+    color: #5f5f3d;
+    border-color:#5f5f3d;
+  }
+  
+  .fire {
+    background-color: #ee8130;
+    color: #733c0a;
+    border-color:#733c0a;
+  }
+  
+  .water {
+    background-color: #6390f0;
+    color: #2c3e50;
+    border-color:#2c3e50;
+  }
+  
+  .electric {
+    background-color: #f7d02c;
+    color: #7a5e00;
+    border-color:#7a5e00;
+  }
+  
+  .grass {
+    background-color: #7ac74c;
+    color: #3f5921;
+    border-color:#3f5921;
+  }
+  
+  .ice {
+    background-color: #96d9d6;
+    color: #4d7473;
+    border-color:#4d7473;
+  }
+  
+  .fighting {
+    background-color: #c22e28;
+    color: #6c1b16;
+    border-color:#6c1b16;
+  }
+  
+  .poison {
+    background-color: #a33ea1;
+    color: #571f58;
+    border-color:#571f58;
+  }
+  
+  .ground {
+    background-color: #e2bf65;
+    color: #7d6c39;
+    border-color:#7d6c39;
+  }
+  
+  .flying {
+    background-color: #a98ff3;
+    color: #4d3c78;
+    border-color:#4d3c78;
+  }
+  
+  .psychic {
+    background-color: #f95587;
+    color: #901741;
+    border-color:#901741;
+  }
+  
+  .bug {
+    background-color: #a6b91a;
+    color: #4f5b0a;
+    border-color:#4f5b0a;
+  }
+  
+  .rock {
+    background-color: #b6a136;
+    color: #5e4b1f;
+    border-color:#5e4b1f;
+  }
+  
+  .ghost {
+    background-color: #735797;
+    color: #3e2a56;
+    border-color:#3e2a56;
+  }
+  
+  .dragon {
+    background-color: #6f35fc;
+    color: #2f1163;
+    border-color:#2f1163;
+  }
+  
+  .dark {
+    background-color: #705746;
+    color: #3d2c1f;
+    border-color:#3d2c1f;
+  }
+  
+  .steel {
+    background-color: #b7b7ce;
+    color: #6f6f8c;
+    border-color:#6f6f8c;
+  }
+  
+  .fairy {
+    background-color: #d685ad;
+    color: #8c4853;
+    border-color:#8c4853;
+  }
+  
