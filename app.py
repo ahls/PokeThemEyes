@@ -41,13 +41,14 @@ def homepage():
     if name != None:
         if pokemon == None:
             #if pokemon is still none after all, return it is not there.
-            flash(f'pokemon you are looking for, {name}, does not exist :(')
+            flash(f'pokemon you are looking for, {name}, does not exist in our DB :(')
         else:
             #pokemon was found. calculate all the possible relations
             pkTypes = [x.pokemon_type for x in PokemonTypes.query.filter(PokemonTypes.pokemon_id==pokemon.id).all()]
             a,b = TypeToTypeRelation.CalculateRelation(pkTypes)
             relAtk,relDef,atkMult, defMult = FindBestTypes(a,b)
-            return render_template('main.html',pokemon = pokemon, relAtk = relAtk, relDef=relDef, atkMult= atkMult,defMult=defMult)
+            quad,double = FindStrengths(a)
+            return render_template('main.html',pokemon = pokemon, pokeTypes=pkTypes, relAtk = relAtk, relDef=relDef, atkMult= atkMult,defMult=defMult, quadTo = quad,doubleTo= double)
 
     return render_template('main.html', pokemon= None)
 def FindBestTypes(relAtk,relDef):
@@ -64,6 +65,15 @@ def FindBestTypes(relAtk,relDef):
             defSet.append(tp)
     return atkSet,defSet, atkVal, defVal
     
+def FindStrengths(relAtk):
+    quad = []
+    double = []
+    for tp, val in relAtk.items():
+        if val == 4:
+            quad.append(tp)
+        elif val == 2:
+            quad.append(tp)
+    return quad,double
 
 def reset():
     db.drop_all()

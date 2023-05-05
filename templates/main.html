@@ -21,7 +21,12 @@
     <div>
         <img src="{{pokemon.imagePath}}" alt="image of {{pokemon.name}}">
     </div>
-    {{pokemon.name}}
+    <div>
+        {{pokemon.name}}
+        {% for tp in pokeTypes%}
+        <span class="{{tp}} typeDisplay" style="display:inline-block;">{{tp}}</span>
+        {% endfor %}
+    </div>
     <div class="outline">
         <div class="box-label outline">
             weakness
@@ -50,6 +55,43 @@
             {% endfor %}
             </ul>
         </div>
+    </div>
+
+    <div class="outline">
+        <div class="box-label outline">
+            strong against
+        </div>
+        {% if quadTo %}
+        <div>
+            Does the A LOT of damage(x4) to:
+            <ul>
+                {% for tp in quadTo%}
+                <li>
+                    <div class="{{tp}} typeDisplay">
+                        {{tp}}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if doubleTo %}
+        <div>
+            Does the more damage(x2) to:
+            <ul>
+            {% for tp in doubleTo%}
+                <li>
+                    <div class="{{tp}} typeDisplay">
+                        {{tp}}
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if not(doubleTo or quadTo)%}
+        NOTHING IN PARTICULAR!
+        {% endif %}
     </div>
     {% endif %}
 {% endblock %}
