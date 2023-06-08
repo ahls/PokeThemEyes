@@ -22,7 +22,7 @@
         <img src="{{pokemon.imagePath}}" alt="image of {{pokemon.name}}">
     </div>
     <div>
-        {{pokemon.name}}
+        {{pokemon.name}}<br>
         {% for tp in pokeTypes%}
         <span class="{{tp}} typeDisplay" style="display:inline-block;">{{tp}}</span>
         {% endfor %}
